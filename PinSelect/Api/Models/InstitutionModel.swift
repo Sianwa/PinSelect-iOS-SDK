@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InstitutionModel{
+struct InstitutionModel : Codable{
     let clientId: String
     let clientSecret: String
     let institutionId : Int
