@@ -7,6 +7,7 @@
 
 import Foundation
 import JOSESwift
+import Security
 
 final class InitializeViewModel : ObservableObject {
     
@@ -44,9 +45,22 @@ final class InitializeViewModel : ObservableObject {
         
         let baseUrl = "https://jsonplaceholder.typicode.com/users"
         
-        let rsaPubKeyString = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo+eP/jVrcZ5G3A6glDSnY2kpdz67G+3z0Oc0XeI+7kHfdmwyjdC2nalTVyEW4iGLzMUvWX1iK5W1Ozrq8E8NRTy/PNTWCd71+mgvFzt6Fgab8lTRMv8+oniM6X4i9mbOkB0nKaByGmY/DDDiYoCBehvB32KaJIyr39LNke5iB98+3TWhv/cZsJ8LabhdHXgWXsnWZonke0hSkH+lpnph+zFHi1z1bLqghC2zPAUCzBbaYoDVM6DGWJ9tJVHYjMDHjNJC617PEEtOBwIWv5G19Aw51DvtD3cIwGzuA5f5xe4LWc2tZ0RVfUekIvJzwe0MvTjRHqZWCX/08FmayGlNfwIDAQAB";
+        let rsaPubKeyString = "TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFvK2VQL2pWcmNaNUczQTZnbERTblkya3BkejY3RyszejBPYzBYZUkrN2tIZmRtd3lqZEMybmFsVFZ5RVc0aUdMek1VdldYMWlLNVcxT3pycThFOE5SVHkvUE5UV0NkNzErbWd2Rnp0NkZnYWI4bFRSTXY4K29uaU02WDRpOW1iT2tCMG5LYUJ5R21ZL0RERGlZb0NCZWh2QjMyS2FKSXlyMzlMTmtlNWlCOTgrM1RXaHYvY1pzSjhMYWJoZEhYZ1dYc25XWm9ua2UwaFNrSCtscG5waCt6RkhpMXoxYkxxZ2hDMnpQQVVDekJiYVlvRFZNNkRHV0o5dEpWSFlqTURIak5KQzYxN1BFRXRPQndJV3Y1RzE5QXc1MUR2dEQzY0l3R3p1QTVmNXhlNExXYzJ0WjBSVmZVZWtJdkp6d2UwTXZUalJIcVpXQ1gvMDhGbWF5R2xOZndJREFRQUI=";
+
+        
+        let keyBase64 = "MIIEpAIBAAKCAQEA5B7lqLrwVCFNUiCmwMr5Q48iuArOolxb7DAuclGnoZVX0SaJ8mrvCOtd6qY/VeBw227txWEPH7840qX/yGxxqTngdNCuDATqYrrbxFOGV30GZmg6NpZYKShTlsftkhiCsoXW0A7m5MCZUkH2/sNBC8oRHCNDXRlsU5bq/yPaAMt6xlBsUgLt/++INcuw+rx1Rm7LJv0FeukQmlekUOL/DMJXcLXCa05StTbvHPiAHOLej07pThCZoX3XHFpOTQ6379EsjvSZHtNhr67qrtRb8or2rX7wt5NWzXHbhUDlyzEcIBB/7G8ygqWhyZTEIMFiRMWSa3KGYZE3nZe5weC7SQIDAQABAoIBAQCjjxehA+++kmYK5YhKIP3Zl64QAQeo18m8rcsPgkZLj3V4a0Zq/orGfWNIE8zDePnSC1YFuBKM86D9P7IGdOKFsA6kEt9HlNqs0UczG6Pt5KGLGV3rt54cXGKacFyA7HwBHf8oDBc2mnUTymIaxcpEdqwP3aS2Ar1trX5uUrlC6UcZyspBZVYvMlU+uAKL1ZtFxjsv0EzuQQW1HX7b2WPUAoxp/yBC/EBRM9K8WbG9i7NB4FTFHAdTMt/EZLGUESizFgrai6lp3s96Apz5GvncRUI+UVP/7zbUaFYdRMW5lrcR8+PL9NACkL2rnQuLoyLKWZWPPlD3WEE9EzY4bH6FAoGBAPu8hL8goEbWMFDZuox04Ouy6EpXR8BDTq8ut6hmad6wpFgZD15Xu7pYEbbsPntdYODKDDAIJCBsiBgf2emL50BpiQkzMPhxyMsN5Pzry9Ys+AzPkJcQ7g+/Wbto9lCC+JmgxtGQ7JIibo1QH7BTsuK9+k72HnZne6oIfaYKbBZfAoGBAOf7/D2Q7NiNcEgxpZRn06+mnkHMb8PfCKfJf/BFf5WKXSkDBZ3XhWSPnZyQnE3gW3lzJjzUwHS+YDk8A0Xl2piAHa/d5O/8eoijB8wa6UGVDBIXqUnfM3Udfry78rM71FOpbzV3H48G7u4CUJMGwOpEqF0TfgtQr4uf8OurdH9XAoGAbdNhVsE1K7Jmgd97s6uKNUpobYaGlyrGOUd4eM+1gKIwEP9d5RsBm9qwX83RtKCYk3mSt6HVoQ+4kE3VFD8lNMTWNF1REBMUNwJo1K9KzrXvwicMPdv1AInK7ChuzdFWBDBQjT1c+KRs9tnt+U+Ky8F2Ytydjaq4GQZ7SuVhIqECgYBMsS+IovrJ9KhkFZWp5FFFRo4XLqDcXkWcQq87HZ66L03xGwCmV/PPdPMkKWKjFELpebnwbl1Zuv5QrZhfaUfFFsW5uF/RPuS7ezo+rb7jYYTmDlB3DYUTeLbHalMoEeV16xPK1yDlxeMDaFx+3sK0MBKBAsqurvP58txQ7RPMbQKBgQCzRcURopG0DF4VF4+xQJS8FpTcnQsQnO/2MJR35npA2iUb+ffs+0lgEdeWs4W46kvaF1iVEPbr6She+aKROzE9Bs25ZCgGLv97oUxDQo0IPvURX7ucN+xOUU1hw9oQDVdGKl1JZh93fn+bjtMTe+26asGLmM0r9YQX1P8qaw3KOg=="
+        
         
         let rsaPrivateKeyString = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCj54/+NWtxnkbcDqCUNKdjaSl3Prsb7fPQ5zRd4j7uQd92bDKN0LadqVNXIRbiIYvMxS9ZfWIrlbU7OurwTw1FPL881NYJ3vX6aC8XO3oWBpvyVNEy/z6ieIzpfiL2Zs6QHScpoHIaZj8MMOJigIF6G8HfYpokjKvf0s2R7mIH3z7dNaG/9xmwnwtpuF0deBZeydZmieR7SFKQf6WmemH7MUeLXPVsuqCELbM8BQLMFtpigNUzoMZYn20lUdiMwMeM0kLrXs8QS04HAha/kbX0DDnUO+0PdwjAbO4Dl/nF7gtZza1nRFV9R6Qi8nPB7Qy9ONEeplYJf/TwWZrIaU1/AgMBAAECggEAD5eXRKUbUAcxEX0YvJCXvebCqZPfo+QKljxwaF/+AZdlpTPcyU3qGWyCv56nuSJc1MGLZBV/8cp/n59Wuz6h8gy52pUauXyq5MPleu3PCupdCnwUHKhYcodKTGoR9GPKUb5cO+MGB8njRIsf9iPobU/XrSMJq+Fv9k5s/O1zCPGGZb4Mu7TkqIQSaShQO1mvLXvQ3Bp9CsxdD5SDJs8G2vxZLOlEbChPr7QW4khkN05AVHT8xxc4QUL1IVVf+VrVy68wUs129R4V9BTXojAEu1R9mbkleTWwH50UH/Sd3zQeiQ2MoK7b/kGb5mYqnlDoZnsGtng51Zqff5RPnRDntQKBgQDNV612LWSN5U+z4eS4Q8wDWNftsPnFYTab9r1RfRDtvZuzv7Pc+TpLmWWk/kMMBbaco2luFdTHxg7Xo9fk2rEdLaigE6qz71ulL3/qCaLLdw2sAT3UFKdeQ5d4hRNV1hFLIaX1UXJHT1RsLHIoJzVEHi9rgy+9T+RqUev0jYXqswKBgQDMVuNJlAZjFclhdUcyTTP84k21jKvvVcwpCtHhtZG1XTbMzJt4RaVqvanpo844kYKauPCMdXwIaFgwpV08sa3PGcoQemDx8LUPtyO+f95+msFK57f59qMEoGKUJT1ieKO/SdQr3rySo+Vf1WcP5rOl6HVR6xWtnKkmNuDR4kFoBQKBgE4Yg3tHpk+lH9v9FLzT5Bp9xpm6zjO4VkmY3MXKOA8DJt2FEkX/b6Fi9Np8bUl8PshyCd35ZZSZCfoPcUOzvNqpC9HdyPVoGkXHu/FpusWBQOzjB/3J4SGjuU735bOml6soX/LeCAWA8U221a/ZwZNnm4dbPGPWp7ub7o5y6LSrAoGAYBHJsmIhzpwDngphesjJVG+hUWXdwBx6bCFmI9QVuUsl5Iud3KIB73lUVUBqSDZBTTT+A0uJEPrd26EjgNGYgfICClU/FwCwX78e0wWTObrQfcMLwD2wzxAIyNXpUk6dzeWMF0QVLGxZ/wB6AAPbGnl8DxOTkZhB/nF2qbbSQXECgYEAxKXTRNBY7D95lBEh/ESgxTW7RrXT9swcpgZnT0+ASD2WISfYA9VrRrmyHSm9BZDM0tQpHvylnekXtvla+I6lAXU9WV8A/6WpZsYkA2CUaqC5ILvMwuDJKtZxNWiXK0yCmzKTECCiR4no5n69IONVi2VolxqHgNKpfdX48QhzQbw=";
+        
+        
+        let keyData = Data(base64Encoded: keyBase64)!
+        let key = SecKeyCreateWithData(keyData as NSData, [
+            kSecAttrKeyType: kSecAttrKeyTypeRSA,
+            kSecAttrKeyClass: kSecAttrKeyClassPrivate,
+        ] as NSDictionary, nil)!
+        print(key)
+        
         
         var institutionDetails : InstitutionModel = InstitutionModel(
             clientId: "IKIA971FB5996EADBD16534494CB87B90D1DB3EAD105",
@@ -63,9 +77,13 @@ final class InitializeViewModel : ObservableObject {
         
         
         //generate payload needed to send user an OTP then encrypt it
-        let payload = generatePayload(accountData: accountDetails)
-        encryptPayload(generatedPayload: payload, mleKey: "sample_key", publicKey: rsaPubKeyString)
-        
+        do{
+            let payload = try generatePayload(accountData: accountDetails)
+            encryptPayload(generatedPayload: payload, key: key, publicKey: rsaPubKeyString)
+            
+        }catch{
+            print("Something went wrong while generating payload....")
+        }
         
         //API request
         if let url = URL(string: baseUrl){
@@ -91,42 +109,24 @@ final class InitializeViewModel : ObservableObject {
         
     }
     
-    func generatePayload(accountData: AccountModel) -> InitializeRequestModel{
-        var generatedPayload: InitializeRequestModel;
+    
+    func generatePayload(accountData: AccountModel)throws -> String {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(accountData)
+        let jsonString = String(data: data, encoding: .utf8)!
         
-        if ((accountData.expriyDate) != "") { //treat it as a credit card
-            generatedPayload = InitializeRequestModel(serno: accountData.cardSerNo,pan: accountData.accountNumber, expiryDate: accountData.expriyDate!)
-        }else{
-            generatedPayload = InitializeRequestModel(serno: accountData.cardSerNo, pan: "", expiryDate: "")
-        }
-        
-        return generatedPayload
-        
+        return jsonString;
     }
     
-    func encryptPayload(generatedPayload : InitializeRequestModel, mleKey: String, publicKey: String) -> Void{
-        var header = JWEHeader(keyManagementAlgorithm: .RSAOAEP256, contentEncryptionAlgorithm: .A128CBCHS256)
-        header.kid = mleKey
+    func encryptPayload(generatedPayload : String, key: SecKey!, publicKey: String) -> Void{
         
-        let keyData = Data(base64Encoded: publicKey)!
-        let key = SecKeyCreateWithData(keyData as NSData, [kSecAttrKeyType : kSecAttrKeyTypeRSA, kSecAttrKeyClass : kSecAttrKeyClassPublic] as NSDictionary, nil)!
-        
-     
-        let jwk = try! RSAPublicKey(publicKey: key)
-        let rsaPublicKey = jwk.jsonString()!
-        print("RSA PUBLIC KEY")
-        
-        let payload = Payload(String(describing: generatedPayload).data(using: .utf8)!)
-        let encrypter = Encrypter(keyManagementAlgorithm: .RSAOAEP256, contentEncryptionAlgorithm: .A128CBCHS256, encryptionKey: rsaPublicKey)!
-        
-        do {
-            guard let jwe = try? JWE(header: header, payload: payload, encrypter: encrypter)
-            else{
-                throw JOSESwiftError.encryptingFailed(description: "Failed to encrypt data")
-            }
+        let encrypter = Encrypter(keyManagementAlgorithm: .RSAOAEP256, contentEncryptionAlgorithm: .A128CBCHS256, encryptionKey: key)!
+        do{
+            let jwe = try JWE(header: JWEHeader(keyManagementAlgorithm: .RSAOAEP256, contentEncryptionAlgorithm: .A128CBCHS256), payload: Payload(generatedPayload.data(using: .utf8)!), encrypter: encrypter)
+            
             print(jwe.compactSerializedString)
             
-        } catch {
+        }catch{
             print("Something went wrong while encrypting....")
         }
     }

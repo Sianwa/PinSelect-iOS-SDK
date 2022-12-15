@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct AccountModel{
+struct AccountModel: Codable{
     let accountNumber: String
     let cardSerNo: String
     let expriyDate: String?

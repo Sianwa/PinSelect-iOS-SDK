@@ -28,7 +28,7 @@ struct ContentView: View {
     func startService(){
         print("Initializing service......")
         self.serviceIsStarting = true
-        vm.initializeService()
+        vm.getSample()
         
     }
     

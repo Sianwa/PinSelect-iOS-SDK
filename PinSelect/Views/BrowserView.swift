@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 struct BrowserView: View {
-    private let urlString: String = "https://pom-test.interswitch-ke.com/124?callbackUrl=www.google.come"
+    private let urlString: String = "https://pom-test.interswitch-ke.com/722d6ab4-3979-4eb4-84e1-a1414657c375?callbackUrl=www.google.com"
     
     var body: some View {
         VStack{
