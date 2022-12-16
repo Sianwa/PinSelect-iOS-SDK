@@ -110,6 +110,48 @@ final class InitializeViewModel : ObservableObject {
     }
     
     
+    func sendPostRequest(){
+        guard let url = URL(string:"https://testids.interswitch.co.ke/identity/api/v1/web/initialize")
+        else{
+            fatalError()
+        }
+        
+        //prepare URL request object
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+      
+        // Set HTTP Request Body
+        let requestObject: RequestPayloadModel = RequestPayloadModel(institution: Institution(callBackUrl: "www.google.com"), account: Account(accountNumber: "", cardSerialNumber: 556173, expiryDate: "2506", cvv: ""))
+        
+        //serialize the object
+        let encodedData = try? JSONEncoder().encode(requestObject)
+        let jsonString = String(data: encodedData!,encoding: .utf8)
+        print("\(String(describing: jsonString))")
+        
+        request.httpBody = encodedData!;
+
+        //perform HTTP Request
+        let task = URLSession.shared.dataTask(with: request){
+            (data, response, error) in
+            
+            //check for error
+            if let error = error {
+                print("Error occured while sending request :: \(error)")
+                return
+            }
+            
+            //convert HTTP response data to a string
+            if let data = data, let dataString = String(data: data, encoding: .utf8){
+                let httpResponse = response as? HTTPURLResponse
+                print("RESPONSE CODE :: \(String(describing: httpResponse?.statusCode))")
+                print("RESPONSE DATA :: \(dataString)")
+            }
+        }
+        task.resume();
+        
+    }
+    
     func generatePayload(accountData: AccountModel)throws -> String {
         let encoder = JSONEncoder()
         let data = try encoder.encode(accountData)
