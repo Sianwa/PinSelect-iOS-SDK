@@ -104,17 +104,13 @@ final class InitializeViewModel : ObservableObject {
                         
                     }.resume()
             }
-            
         }
-        
     }
     
     
     func sendPostRequest(){
         guard let url = URL(string:"https://testids.interswitch.co.ke/identity/api/v1/web/initialize")
-        else{
-            fatalError()
-        }
+        else{ fatalError() }
         
         //prepare URL request object
         var request = URLRequest(url: url)
@@ -137,7 +133,7 @@ final class InitializeViewModel : ObservableObject {
             
             //check for error
             if let error = error {
-                print("Error occured while sending request :: \(error)")
+                print("Error occured while sending request :: \(error.localizedDescription)")
                 return
             }
             
