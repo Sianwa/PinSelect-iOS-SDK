@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var serviceIsStarting = false;
     @StateObject private var vm = InitializeViewModel()
     
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -28,8 +29,8 @@ struct ContentView: View {
     func startService(){
         print("Initializing service......")
         self.serviceIsStarting = true
-        vm.getSample()
-        
+        vm.sendPostRequest()
+    
     }
     
 

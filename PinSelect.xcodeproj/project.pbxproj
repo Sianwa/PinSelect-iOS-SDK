@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E243E2D293798AE00E0567D /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E243E2C293798AE00E0567D /* AccountModel.swift */; };
 		1E243E2F293798D200E0567D /* InstitutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E243E2E293798D200E0567D /* InstitutionModel.swift */; };
+		1E3A462F294B56240022B5AE /* RequestPayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A462E294B56240022B5AE /* RequestPayloadModel.swift */; };
 		1E4AA6FB29374EFE003BF714 /* PinSelectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AA6FA29374EFE003BF714 /* PinSelectApp.swift */; };
 		1E4AA6FD29374EFE003BF714 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AA6FC29374EFE003BF714 /* ContentView.swift */; };
 		1E4AA6FF29374F01003BF714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4AA6FE29374F01003BF714 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 		1E4AA74829375BBB003BF714 /* PinSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AA74729375BBB003BF714 /* PinSelect.swift */; };
 		1E4AA74D29375EEB003BF714 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AA74C29375EEB003BF714 /* BrowserView.swift */; };
 		1E4AA7532937637F003BF714 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AA7522937637F003BF714 /* LoadingView.swift */; };
+		1E624E86294B082C00C965A3 /* MQTTAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E624E85294B082C00C965A3 /* MQTTAppState.swift */; };
+		1E624E88294B083F00C965A3 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E624E87294B083F00C965A3 /* MQTTManager.swift */; };
 		1EF8E55D2938DE3600C4846B /* InitializeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF8E55C2938DE3600C4846B /* InitializeViewModel.swift */; };
 		1EF8E55F2939E8AF00C4846B /* InitializeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF8E55E2939E8AF00C4846B /* InitializeRequestModel.swift */; };
 		5ED4905D4CE66E66FFDCE380 /* Pods_PinSelect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CF5659B12E2152AC3D3892 /* Pods_PinSelect.framework */; };
@@ -24,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1E243E2C293798AE00E0567D /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		1E243E2E293798D200E0567D /* InstitutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionModel.swift; sourceTree = "<group>"; };
+		1E3A462E294B56240022B5AE /* RequestPayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPayloadModel.swift; sourceTree = "<group>"; };
 		1E4AA6F729374EFE003BF714 /* PinSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4AA6FA29374EFE003BF714 /* PinSelectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSelectApp.swift; sourceTree = "<group>"; };
 		1E4AA6FC29374EFE003BF714 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		1E4AA74729375BBB003BF714 /* PinSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSelect.swift; sourceTree = "<group>"; };
 		1E4AA74C29375EEB003BF714 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		1E4AA7522937637F003BF714 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1E624E85294B082C00C965A3 /* MQTTAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAppState.swift; sourceTree = "<group>"; };
+		1E624E87294B083F00C965A3 /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		1EF8E55C2938DE3600C4846B /* InitializeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewModel.swift; sourceTree = "<group>"; };
 		1EF8E55E2939E8AF00C4846B /* InitializeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeRequestModel.swift; sourceTree = "<group>"; };
 		DC77A3B834B19EAE6939006F /* Pods-PinSelect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinSelect.debug.xcconfig"; path = "Target Support Files/Pods-PinSelect/Pods-PinSelect.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4AA7432937595D003BF714 /* Api */,
+				1E624E83294B07AE00C965A3 /* Utils */,
 				1E4AA74B29375DA4003BF714 /* Views */,
 				1E4AA74729375BBB003BF714 /* PinSelect.swift */,
 				1E4AA6FA29374EFE003BF714 /* PinSelectApp.swift */,
@@ -115,8 +122,26 @@
 				1E243E2C293798AE00E0567D /* AccountModel.swift */,
 				1E243E2E293798D200E0567D /* InstitutionModel.swift */,
 				1EF8E55E2939E8AF00C4846B /* InitializeRequestModel.swift */,
+				1E3A462E294B56240022B5AE /* RequestPayloadModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1E624E83294B07AE00C965A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1E624E84294B081000C965A3 /* MQTT */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1E624E84294B081000C965A3 /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				1E624E85294B082C00C965A3 /* MQTTAppState.swift */,
+				1E624E87294B083F00C965A3 /* MQTTManager.swift */,
+			);
+			path = MQTT;
 			sourceTree = "<group>";
 		};
 		1EF8E55B2938D92800C4846B /* ViewModels */ = {
@@ -141,7 +166,6 @@
 				DC77A3B834B19EAE6939006F /* Pods-PinSelect.debug.xcconfig */,
 				F6F0677FCE14AAA593DE6D9F /* Pods-PinSelect.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,7 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3A462F294B56240022B5AE /* RequestPayloadModel.swift in Sources */,
 				1E4AA74829375BBB003BF714 /* PinSelect.swift in Sources */,
+				1E624E86294B082C00C965A3 /* MQTTAppState.swift in Sources */,
 				1E243E2D293798AE00E0567D /* AccountModel.swift in Sources */,
 				1EF8E55D2938DE3600C4846B /* InitializeViewModel.swift in Sources */,
 				1E4AA6FD29374EFE003BF714 /* ContentView.swift in Sources */,
@@ -267,6 +293,7 @@
 				1E243E2F293798D200E0567D /* InstitutionModel.swift in Sources */,
 				1EF8E55F2939E8AF00C4846B /* InitializeRequestModel.swift in Sources */,
 				1E4AA7532937637F003BF714 /* LoadingView.swift in Sources */,
+				1E624E88294B083F00C965A3 /* MQTTManager.swift in Sources */,
 				1E4AA74D29375EEB003BF714 /* BrowserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
