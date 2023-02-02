@@ -19,7 +19,7 @@ public class PinOnMobile: UIViewController {
     var mqttClient: CocoaMQTT!
     var uuidString: String!
     var topic: String!
-    let baseUrl = "https://4841-41-90-69-53.eu.ngrok.io/"
+    let baseUrl = "https://testids.interswitch.co.ke/"
     public var mqttHostURL: String = "testmerchant.interswitch-ke.com"
     
     
