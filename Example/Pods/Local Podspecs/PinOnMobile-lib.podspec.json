@@ -1,0 +1,42 @@
+{
+  "name": "PinOnMobile-lib",
+  "version": "0.1.0",
+  "summary": "A short description of PinOnMobile-lib.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/x-oauth-basic/PinOnMobile-lib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "x-oauth-basic": "kelsey.makale@interswitchgroup.com"
+  },
+  "source": {
+    "git": "https://github.com/x-oauth-basic/PinOnMobile-lib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source_files": "PinOnMobile-lib/Classes/**/*",
+  "dependencies": {
+    "JOSESwift": [
+      " ~> 2.3"
+    ],
+    "CocoaMQTT": [
+      " ~> 1.2.5"
+    ],
+    "Alamofire": [
+      " ~> 5.5.0"
+    ],
+    "PercentEncoder": [
+      " ~> 1.2.1"
+    ],
+    "CryptoSwift": [
+      " ~> 1.0.0"
+    ],
+    "SwiftyRSA": [
+      " ~> 1.5.0"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (5.5.0)
+  - CocoaAsyncSocket (7.6.5)
+  - CocoaMQTT (1.2.5):
+    - CocoaAsyncSocket (~> 7.6.3)
+  - CryptoSwift (1.0.0)
+  - Eureka (5.4.0)
+  - JOSESwift (2.4.0)
+  - PercentEncoder (1.2.1)
+  - PinOnMobile-lib (0.1.0):
+    - Alamofire (~> 5.5.0)
+    - CocoaMQTT (~> 1.2.5)
+    - CryptoSwift (~> 1.0.0)
+    - JOSESwift (~> 2.3)
+    - PercentEncoder (~> 1.2.1)
+    - SwiftyRSA (~> 1.5.0)
+  - SwiftyRSA (1.5.0):
+    - SwiftyRSA/ObjC (= 1.5.0)
+  - SwiftyRSA/ObjC (1.5.0)
+
+DEPENDENCIES:
+  - Alamofire (= 5.5.0)
+  - CocoaMQTT (= 1.2.5)
+  - CryptoSwift (= 1.0.0)
+  - Eureka (~> 5.4)
+  - PercentEncoder (= 1.2.1)
+  - PinOnMobile-lib (from `../`)
+  - SwiftyRSA (= 1.5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CocoaAsyncSocket
+    - CocoaMQTT
+    - CryptoSwift
+    - Eureka
+    - JOSESwift
+    - PercentEncoder
+    - SwiftyRSA
+
+EXTERNAL SOURCES:
+  PinOnMobile-lib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  Eureka: fadaa9fa3d6e402d3c60f78f24edf3d7bafc9c29
+  JOSESwift: 7ff178bb9173ff42c6e990929a9f2fa702a34f69
+  PercentEncoder: 40a4d727ebeda2a6ec77bf34fa620cc4b5845488
+  PinOnMobile-lib: 477f7eeabe27fa2caafee85f78c38ec66da0529c
+  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
+
+PODFILE CHECKSUM: 5463f773abc0d538963d29c35aa41ae7020daa8c
+
+COCOAPODS: 1.11.3
