@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'PinOnMobile-lib_Example' do
+  pod 'PinOnMobile-lib', :path => '../'
+
+  target 'PinOnMobile-lib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
