@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/x-oauth-basic/PinOnMobile-lib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'PinOnMobile-lib/Classes/**/*'
   
@@ -39,4 +39,10 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'JOSESwift', ' ~> 2.3'
+  s.dependency 'CocoaMQTT', ' ~> 1.2.5'
+  s.dependency 'Alamofire', ' ~> 5.5.0'
+  s.dependency 'PercentEncoder',' ~> 1.2.1'
+  s.dependency 'CryptoSwift', ' ~> 1.0.0'
+  s.dependency 'SwiftyRSA', ' ~> 1.5.0'
 end

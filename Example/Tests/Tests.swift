@@ -1,5 +1,4 @@
 import XCTest
-import PinOnMobile-lib
 
 class Tests: XCTestCase {
     
