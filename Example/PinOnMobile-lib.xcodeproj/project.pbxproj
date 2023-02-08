@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A146EF8F710CED61A8995D0 /* Pods_PinOnMobile_lib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC9A7408DE7B16D32448B7A /* Pods_PinOnMobile_lib_Tests.framework */; };
-		1E177F56298B74630045F263 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E177F55298B74630045F263 /* ContentView.swift */; };
 		3308F7069C9942D652934396 /* Pods_PinOnMobile_lib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454B8556C6CC81B71DB5BA25 /* Pods_PinOnMobile_lib_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		11D2008F34FEBA17C84ED1FF /* Pods-PinOnMobile-lib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinOnMobile-lib_Example.debug.xcconfig"; path = "Target Support Files/Pods-PinOnMobile-lib_Example/Pods-PinOnMobile-lib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		14C9D61E5F478FAC4A5C544F /* Pods-PinOnMobile-lib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinOnMobile-lib_Example.release.xcconfig"; path = "Target Support Files/Pods-PinOnMobile-lib_Example/Pods-PinOnMobile-lib_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1E177F55298B74630045F263 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		454B8556C6CC81B71DB5BA25 /* Pods_PinOnMobile_lib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinOnMobile_lib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC9A7408DE7B16D32448B7A /* Pods_PinOnMobile_lib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinOnMobile_lib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PinOnMobile-lib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PinOnMobile-lib_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +110,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				1E177F55298B74630045F263 /* ContentView.swift */,
 			);
 			name = "Example for PinOnMobile-lib";
 			path = "PinOnMobile-lib";
@@ -352,7 +349,6 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				1E177F56298B74630045F263 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,17 +23,14 @@ public class PinOnMobile: UIViewController {
     public var mqttHostURL: String = "testmerchant.interswitch-ke.com"
     
     
-    public func initialize(accountData: AccountModel)async throws -> InitializationResponseModel{
+    public func initialize(accountData: AccountModel, institutionData: InstitutionModel)async throws -> InitializationResponseModel{
         
         do {
-            
-            let clientID = "IKIA971FB5996EADBD16534494CB87B90D1DB3EAD105"
-            let clientSecret = "ONcmxGU4B+A+qaHp+/Nw19yO9w117PY36/SxsH1A1Wc="
-            let heads = try generateHeaders(clientId: clientID, clientSecret: clientSecret, httpRequest: "\(self.baseUrl)identity/api/v1/web/initialize", path: "")
+            let heads = try generateHeaders(clientId: institutionData.clientId, clientSecret: institutionData.clientSecret, httpRequest: "\(self.baseUrl)identity/api/v1/web/initialize", path: "")
             
             let requestObject: RequestPayloadModel = RequestPayloadModel(
                 
-                institution: Institution(callbackUrl: "www.google.com", id: 54),
+                institution: Institution(callbackUrl: institutionData.callbackURL, id: institutionData.institutionId),
                 account: Account(
                     accountNumber: accountData.accountNumber,
                     cardSerialNumber: accountData.cardSerNo,
