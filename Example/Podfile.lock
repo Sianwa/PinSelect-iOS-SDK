@@ -1,15 +1,17 @@
 PODS:
   - Alamofire (5.5.0)
-  - CocoaAsyncSocket (7.6.5)
-  - CocoaMQTT (1.2.5):
-    - CocoaAsyncSocket (~> 7.6.3)
+  - CocoaMQTT (2.1.0):
+    - CocoaMQTT/Core (= 2.1.0)
+  - CocoaMQTT/Core (2.1.0):
+    - MqttCocoaAsyncSocket (~> 1.0.8)
   - CryptoSwift (1.0.0)
   - Eureka (5.4.0)
   - JOSESwift (2.4.0)
+  - MqttCocoaAsyncSocket (1.0.8)
   - PercentEncoder (1.2.1)
   - PinOnMobile-lib (0.1.0):
     - Alamofire (~> 5.5.0)
-    - CocoaMQTT (~> 1.2.5)
+    - CocoaMQTT (~> 2.1.0)
     - CryptoSwift (~> 1.0.0)
     - JOSESwift (~> 2.3)
     - PercentEncoder (~> 1.2.1)
@@ -20,7 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 5.5.0)
-  - CocoaMQTT (= 1.2.5)
+  - CocoaMQTT (= 2.1.0)
   - CryptoSwift (= 1.0.0)
   - Eureka (~> 5.4)
   - PercentEncoder (= 1.2.1)
@@ -30,11 +32,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CocoaAsyncSocket
     - CocoaMQTT
     - CryptoSwift
     - Eureka
     - JOSESwift
+    - MqttCocoaAsyncSocket
     - PercentEncoder
     - SwiftyRSA
 
@@ -44,15 +46,15 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
-  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
+  CocoaMQTT: 43666585403f664bb55361189c03c54897060324
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   Eureka: fadaa9fa3d6e402d3c60f78f24edf3d7bafc9c29
   JOSESwift: 7ff178bb9173ff42c6e990929a9f2fa702a34f69
+  MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
   PercentEncoder: 40a4d727ebeda2a6ec77bf34fa620cc4b5845488
-  PinOnMobile-lib: 477f7eeabe27fa2caafee85f78c38ec66da0529c
+  PinOnMobile-lib: 619fd63e6ee23ef65d6fd81ee9c4ad0a26ae07c3
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: 5463f773abc0d538963d29c35aa41ae7020daa8c
+PODFILE CHECKSUM: fa21ee32793d49dc7fdfa4e86bc9866a6cede820
 
 COCOAPODS: 1.11.3

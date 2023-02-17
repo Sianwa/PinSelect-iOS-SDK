@@ -40,7 +40,7 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'JOSESwift', ' ~> 2.3'
-  s.dependency 'CocoaMQTT', ' ~> 1.2.5'
+  s.dependency 'CocoaMQTT', ' ~> 2.1.0'
   s.dependency 'Alamofire', ' ~> 5.5.0'
   s.dependency 'PercentEncoder',' ~> 1.2.1'
   s.dependency 'CryptoSwift', ' ~> 1.0.0'

@@ -24,16 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## CocoaAsyncSocket
-
-Public Domain License
-
-The CocoaAsyncSocket project is in the public domain.
-
-The original TCP version (AsyncSocket) was created by Dustin Voss in January 2003.
-Updated and maintained by Deusty LLC and the Apple development community.
-
-
 ## CocoaMQTT
 
 This project is dual licensed under the Eclipse Public License 1.0 and the
@@ -257,6 +247,16 @@ incurred by, or claims asserted against, such Contributor by reason
 of your accepting any such warranty or additional liability.
 
 END OF TERMS AND CONDITIONS
+
+
+## MqttCocoaAsyncSocket
+
+Public Domain License
+
+The MqttCocoaAsyncSocket project is in the public domain.
+
+The original TCP version (AsyncSocket) was created by Dustin Voss in January 2003.
+Updated and maintained by Deusty LLC and the Apple development community.
 
 
 ## PercentEncoder

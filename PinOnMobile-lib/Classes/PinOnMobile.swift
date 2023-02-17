@@ -71,9 +71,10 @@ public class PinOnMobile: UIViewController {
     func setUpMQTT(){
         let clientID = "iOS-" + String(ProcessInfo().processIdentifier)
         mqttClient = CocoaMQTT(clientID: clientID, host: self.mqttHostURL, port: 1883)
+        mqttClient.logLevel = .debug
         mqttClient.username = ""
         mqttClient.password = ""
-        mqttClient.willMessage = CocoaMQTTWill(topic: "/will", message: "dieout")
+        mqttClient.willMessage = CocoaMQTTMessage(topic: "/will", string: "dieout")
         mqttClient.keepAlive = 60
         mqttClient.connect()
         mqttClient.delegate = self
@@ -88,22 +89,22 @@ extension PinOnMobile:CocoaMQTTDelegate{
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
-        debugPrint(message.string!)
+        
     }
     
-    public func mqtt(_ mqtt: CocoaMQTT, didPublishAck id: UInt16) {
+    public func mqtt(_ mqtt:CocoaMQTT, didPublishAck id: UInt16) {
         
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16) {
+        debugPrint("mqt RECEIVED MESSAGE::\(message)")
+    }
+    
+    public func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopics success: NSDictionary, failed: [String]) {
         
     }
     
-    public func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopic topics: [String]) {
-        debugPrint(topics)
-    }
-    
-    public func mqtt(_ mqtt: CocoaMQTT, didUnsubscribeTopic topic: String) {
+    public func mqtt(_ mqtt: CocoaMQTT, didUnsubscribeTopics topics: [String]) {
         
     }
     
@@ -118,6 +119,8 @@ extension PinOnMobile:CocoaMQTTDelegate{
     public func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
         debugPrint("mqtt disconnected")
     }
+    
+
 }
 
 public protocol PinOnMobileDelegate {
