@@ -132,10 +132,10 @@ class ViewController: FormViewController{
                     self.privateKEY = row.value != nil ? row.value! : ""
                 })
         
-        
+    
             
         +++ Section()
-            <<< ButtonRow("Launch IPG"){(row: ButtonRow) -> Void in
+            <<< ButtonRow("Change PIN"){(row: ButtonRow) -> Void in
                 row.title = row.tag
                 }.onCellSelection{cell,row in
                     
@@ -148,7 +148,7 @@ class ViewController: FormViewController{
                         debugPrint(respObj.callbackUrl)
                         
                         
-                        try await PinOnMobile.instance.changePin(initializationResponseObject: respObj, previousUIViewController: self){(completion) in
+                        try PinOnMobile.instance.changePin(initializationResponseObject: respObj, previousUIViewController: self){(completion) in
                            self.showResponse(message: completion)
                        }
                 }

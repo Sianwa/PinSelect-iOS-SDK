@@ -479,7 +479,7 @@
 		1717D7D83C761B88A3112218BAC5B6B0 /* ChaCha20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChaCha20.swift; path = Sources/CryptoSwift/ChaCha20.swift; sourceTree = "<group>"; };
 		17BF3C0E8591C612A86820A13C2F32E5 /* StreamDecryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamDecryptor.swift; path = Sources/CryptoSwift/StreamDecryptor.swift; sourceTree = "<group>"; };
 		17C894400F79D055C023C9F71EDF2BCB /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile-lib */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PinOnMobile-lib"; path = PinOnMobile_lib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile_lib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinOnMobile_lib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		191AF9A7488E1EA98038B98BFE316005 /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
 		19D436F24C533087D6F4705F1D69AF45 /* PCBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PCBC.swift; path = Sources/CryptoSwift/BlockMode/PCBC.swift; sourceTree = "<group>"; };
 		1A07C4083E5701BC302015578523C522 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		8CEB739CB368E57D1D673431C923F4CA /* Thumbprint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thumbprint.swift; path = JOSESwift/Sources/CryptoImplementation/Thumbprint.swift; sourceTree = "<group>"; };
 		8E238DE2B5189CD0A097AF1E2586437D /* Pods-PinOnMobile-lib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PinOnMobile-lib_Tests.modulemap"; sourceTree = "<group>"; };
 		8E5E36A46EA9144AB1A298989556A9B4 /* SecureRandom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureRandom.swift; path = JOSESwift/Sources/CryptoImplementation/SecureRandom.swift; sourceTree = "<group>"; };
-		8E75A8BC1E8AA864B851F1B324BD6808 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8E75A8BC1E8AA864B851F1B324BD6808 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8FAB1D31ACDAE132D09936CFB696738C /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		8FB21C5BE375ECE106F15C4DFF4BB745 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Source/Message.swift; sourceTree = "<group>"; };
 		92A3C1642027CF85A4DC8C90410FE5A3 /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
@@ -684,7 +684,7 @@
 		9B2C5F8158519AA3634BCA4FF7A0328F /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = Sources/CryptoSwift/UInt128.swift; sourceTree = "<group>"; };
 		9C5D2D4EDEFE856A08DC68F0506EEEF1 /* PinOnMobile-lib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PinOnMobile-lib.modulemap"; sourceTree = "<group>"; };
 		9D07C8B1E97234F5F31A7CB61DEFBDB9 /* EncryptedPayloadModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptedPayloadModel.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E56CEBC20C7909589B0E25F82B822C6 /* Pods-PinOnMobile-lib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinOnMobile-lib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9E63FFC265711C21C85B9D69E1859307 /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
 		9E7C9A337F788431148B93695434E9C4 /* SelectorAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorAlertController.swift; path = Source/Rows/Controllers/SelectorAlertController.swift; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 		C018B5BE12C68C00BFB9DD04AA5ADD86 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
 		C0E3E2F0DBACDD0673D3302E6BD31CEE /* RuleClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleClosure.swift; path = Source/Validations/RuleClosure.swift; sourceTree = "<group>"; };
 		C10AD5CA66D8EFB3BE64878CA4E0A3CB /* JWKSetCodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWKSetCodable.swift; path = JOSESwift/Sources/JWKSetCodable.swift; sourceTree = "<group>"; };
-		C144FDC3E5D92C46105112837EA773EF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C144FDC3E5D92C46105112837EA773EF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1A2BB30199A941D173ED8C56E10DF62 /* Pods-PinOnMobile-lib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PinOnMobile-lib_Example-umbrella.h"; sourceTree = "<group>"; };
 		C22E8E84724B6D115D9F09E2CBF81054 /* InlineRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineRowType.swift; path = Source/Core/InlineRowType.swift; sourceTree = "<group>"; };
 		C2A271B96C668DE5100483C4988C84B3 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Source/Core/Section.swift; sourceTree = "<group>"; };
@@ -767,7 +767,7 @@
 		DD625AC7ED0C9261D4E352F1CD8C5BCD /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Source/Core/Operators.swift; sourceTree = "<group>"; };
 		DE9792ED09EDFD362DAB24161DF4DA41 /* CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBC.swift; path = Sources/CryptoSwift/BlockMode/CBC.swift; sourceTree = "<group>"; };
 		DFB62BD2A36E177DCC854662E0388E00 /* PopoverSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopoverSelectorRow.swift; path = Source/Rows/PopoverSelectorRow.swift; sourceTree = "<group>"; };
-		E03EC027066ADCEC98A524FCD9F3D96C /* PinOnMobile-lib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "PinOnMobile-lib.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E03EC027066ADCEC98A524FCD9F3D96C /* PinOnMobile-lib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "PinOnMobile-lib.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E06B980BEF1B06DB1616A316A80D3F19 /* RSAKeyEncryptionMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSAKeyEncryptionMode.swift; path = JOSESwift/Sources/RSAKeyEncryptionMode.swift; sourceTree = "<group>"; };
 		E07E1D5A181D80D8020182D57B1913B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E0B286EB86F69C2DA8E20F00D855062B /* PercentEncoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PercentEncoder.release.xcconfig; sourceTree = "<group>"; };
@@ -962,7 +962,6 @@
 				6FE77D94B34022D0D10799252202F984 /* GCDAsyncUdpSocket.m */,
 				EA4A48651FEC9F22F7441EF770EF4C3A /* Support Files */,
 			);
-			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -1092,7 +1091,6 @@
 				61CC4C44F95A60B00F72B7ADC8509DD5 /* ZeroPadding.swift */,
 				34DBADBF1733CAFAD04451CD85D713FC /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1202,7 +1200,7 @@
 				082977F3777A7D434AB35C357B487F83 /* Eureka */,
 				84D2E53624850063818F6299973EE893 /* JOSESwift */,
 				EE1080B991DF0427C32B97D60E9A5C0F /* PercentEncoder */,
-				17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile-lib */,
+				17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile_lib.framework */,
 				7FDFDC5A935B1F90AC92834CB698CD13 /* Pods-PinOnMobile-lib_Example */,
 				3F2E3C0E8B26BE957FF361C730C27CFF /* Pods-PinOnMobile-lib_Tests */,
 				0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA */,
@@ -1282,7 +1280,6 @@
 				2257E10F08C0993E52EF6F2AC976D8D9 /* Verifier.swift */,
 				224018CB0C86EAD7AF91FF973D5D1079 /* Support Files */,
 			);
-			name = JOSESwift;
 			path = JOSESwift;
 			sourceTree = "<group>";
 		};
@@ -1398,7 +1395,6 @@
 				DC0A1AF60181B16DD5F6409CB6676638 /* Validation.swift */,
 				F1E41D0F10EF3691C2487AB4C752C320 /* Support Files */,
 			);
-			name = Eureka;
 			path = Eureka;
 			sourceTree = "<group>";
 		};
@@ -1449,7 +1445,6 @@
 				5A1C874602D428986AE9735D5A848F8F /* CocoaMQTTTimer.swift */,
 				918B931B2C672C94B8B510E14F481D34 /* Support Files */,
 			);
-			name = CocoaMQTT;
 			path = CocoaMQTT;
 			sourceTree = "<group>";
 		};
@@ -1509,7 +1504,6 @@
 				F2F69AD0757BA568F4DFDD3650F792B6 /* Validation.swift */,
 				CFFDEDA2010E55FD65E01234883B9411 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1532,7 +1526,6 @@
 				3D88D54387313CAA0E76D9FE64E19B8E /* ObjC */,
 				908F349ECAE258A9AF337B94F87A1BA3 /* Support Files */,
 			);
-			name = SwiftyRSA;
 			path = SwiftyRSA;
 			sourceTree = "<group>";
 		};
@@ -1559,7 +1552,6 @@
 				8C050D081921844AE379A2E3160874F2 /* String+PercentEncoder.swift */,
 				63D6C8BD1652E54709D0595983B33480 /* Support Files */,
 			);
-			name = PercentEncoder;
 			path = PercentEncoder;
 			sourceTree = "<group>";
 		};
@@ -1684,7 +1676,7 @@
 			);
 			name = "PinOnMobile-lib";
 			productName = PinOnMobile_lib;
-			productReference = 17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile-lib */;
+			productReference = 17D1ECC5A44199CE84FF07A08EB1D6AA /* PinOnMobile_lib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4EB168A830EFA6136FA93357D1F1511A /* CocoaMQTT */ = {
@@ -2804,7 +2796,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib.modulemap";
 				PRODUCT_MODULE_NAME = PinOnMobile_lib;
@@ -2971,8 +2963,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3154,7 +3145,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PinOnMobile-lib/PinOnMobile-lib.modulemap";
 				PRODUCT_MODULE_NAME = PinOnMobile_lib;
