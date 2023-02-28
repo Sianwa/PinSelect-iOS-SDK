@@ -28,14 +28,15 @@ public class PinOnMobile: UIViewController {
         do {
             let heads = try generateHeaders(clientId: institutionData.clientId, clientSecret: institutionData.clientSecret, httpRequest: "\(self.baseUrl)identity/api/v1/web/initialize", path: "")
             
+            debugPrint("SELECTION::\(accountData.isDebit)")
+            
             let requestObject: RequestPayloadModel = RequestPayloadModel(
                 
                 institution: Institution(callbackUrl: institutionData.callbackURL, id: institutionData.institutionId),
                 account: Account(
-                    accountNumber: accountData.accountNumber,
                     cardSerialNumber: accountData.cardSerNo,
-                    expiryDate: accountData.expriyDate!,
-                    cvv: "")
+                    isDebit: accountData.isDebit
+                )
             )
             
     

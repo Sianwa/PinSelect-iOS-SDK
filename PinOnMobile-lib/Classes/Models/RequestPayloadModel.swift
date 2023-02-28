@@ -19,8 +19,6 @@ struct Institution: Encodable{
 }
 
 struct Account: Encodable{
-    let accountNumber: String
     let cardSerialNumber: String
-    let expiryDate: String
-    let cvv: String
+    let isDebit: Bool
 }

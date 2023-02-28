@@ -8,13 +8,11 @@
 import Foundation
 
 public struct AccountModel: Codable{
-    public init(accountNumber: String, cardSerNo: String, expriyDate: String?) {
-        self.accountNumber = accountNumber
+    public init(cardSerNo: String, isDebit: Bool) {
         self.cardSerNo = cardSerNo
-        self.expriyDate = expriyDate
+        self.isDebit = isDebit
     }
     
-    let accountNumber: String
     let cardSerNo: String
-    let expriyDate: String?
+    let isDebit: Bool
 }
