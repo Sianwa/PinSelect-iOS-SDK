@@ -23,6 +23,13 @@ public class PinOnMobile: UIViewController {
     public var mqttHostURL: String = "testmerchant.interswitch-ke.com"
     
     
+    public enum NetworkError: Error{
+        case requestFailed
+        case responseUnsuccessful
+        case invalidData
+    }
+    
+    
     public func initialize(accountData: AccountModel, institutionData: InstitutionModel)async throws -> InitializationResponseModel{
         
         do {
@@ -47,8 +54,8 @@ public class PinOnMobile: UIViewController {
              
         
         }catch{
-            print(error)
-            throw error
+            print("Error::\(String(describing: error.asAFError))")
+            throw NetworkError.invalidData
         }
     }
     
