@@ -12,12 +12,12 @@ import PinOnMobile_lib
 
 class ViewController: FormViewController{
     //card variables
-    var serialNumber:String = "4444111";
-    var isDebit: Bool = false;
+    var serialNumber:String = "1412625";
+    var isDebit: Bool = true;
     
     var clientID: String = "IKIA971FB5996EADBD16534494CB87B90D1DB3EAD105";
     var clientSecret: String = "ONcmxGU4B+A+qaHp+/Nw19yO9w117PY36/SxsH1A1Wc=";
-    var institutionID: Int = 54;
+    var institutionID: Int = 6;
     var callbackURL: String = "www.google.com";
     var keyID: String = "deee79ba-f912-11eb-9a03-0242ac130003";
     
@@ -136,25 +136,43 @@ class ViewController: FormViewController{
                     let accData: AccountModel = AccountModel(cardSerNo: self.serialNumber, isDebit: self.isDebit)
                     let instData: InstitutionModel = InstitutionModel(clientId: self.clientID, clientSecret: self.clientSecret, institutionId: self.institutionID, rsaPublicKey: self.publicKEY, rsaPrivateKey: self.privateKEY, keyId: self.keyID, callbackURL: self.callbackURL)
                     
-                    
-                    Task{
-                        
-                        do{
-                            let respObj =  try await PinOnMobile.instance.initialize(accountData: accData, institutionData: instData)
-                            
-                            debugPrint(respObj)
-                            
-                            //if response data is correct open browser view
-                            try PinOnMobile.instance.changePin(initializationResponseObject: respObj, previousUIViewController: self){(completion) in
-                                self.showResponse(message: completion)
+                    if #available(iOS 13.0, *) {
+                        Task {
+                            do {
+                                let respObj = try await PinOnMobile.instance.initialize(accountData: accData, institutionData: instData)
+                                debugPrint(respObj)
+                                try PinOnMobile.instance.changePin(initializationResponseObject: respObj, previousUIViewController: self) { completion in
+                                    self.showResponse(message: completion)
+                                }
+                            }
+                            catch PinOnMobile.NetworkError.invalidData {
+                                self.showResponse(message: "Value passed is incorrect. Please verify and try again")
+                            }
+                            catch {
+                                self.showResponse(message: error.localizedDescription)
                             }
                         }
-                        catch PinOnMobile.NetworkError.invalidData{
-                            self.showResponse(message: "Value passed is incorrect. Please verify and try again")
+                    } else {
+                        // Fallback for iOS 12 using completion handlers.
+                        // Note: Ensure that your PinOnMobile instance provides an overload for 'initialize'
+                        // that accepts a completion block (e.g. using Result<InitializationResponseModel, Error>).
+                        PinOnMobile.instance.initialize(accountData: accData, institutionData: instData) { result in
+                            switch result {
+                            case .success(let respObj):
+                                debugPrint(respObj)
+                                do {
+                                    try PinOnMobile.instance.changePin(initializationResponseObject: respObj, previousUIViewController: self) { message in
+                                        self.showResponse(message: message)
+                                    }
+                                } catch {
+                                    self.showResponse(message: error.localizedDescription)
+                                        }
+                            case .failure(let error):
+                                self.showResponse(message: error.localizedDescription)
+                            }
                         }
                         
                     }
-                       
         }
         
     }
