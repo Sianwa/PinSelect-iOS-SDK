@@ -29,9 +29,9 @@ public class PinOnMobile: UIViewController {
         case invalidData
     }
     
-    
+    // MARK: - Async/Await Methods (iOS 13+)
+    @available(iOS 13.0, *)
     public func initialize(accountData: AccountModel, institutionData: InstitutionModel)async throws -> InitializationResponseModel{
-        
         do {
             let heads = try generateHeaders(clientId: institutionData.clientId, clientSecret: institutionData.clientSecret, httpRequest: "\(self.baseUrl)identity/api/v1/web/initialize", path: "")
             
@@ -58,6 +58,42 @@ public class PinOnMobile: UIViewController {
             throw NetworkError.invalidData
         }
     }
+    
+    
+    // MARK: - Callback-based Overloads for iOS 12
+    // Fallback for initialize using a completion handler.
+    public func initialize(accountData: AccountModel, institutionData: InstitutionModel,
+                              completion: @escaping (Result<InitializationResponseModel, Error>) -> Void) {
+           do {
+               let heads = try generateHeaders(clientId: institutionData.clientId,
+                                               clientSecret: institutionData.clientSecret,
+                                               httpRequest: "\(self.baseUrl)identity/api/v1/web/initialize",
+                                               path: "")
+               
+               let requestObject = RequestPayloadModel(
+                   institution: Institution(callbackUrl: institutionData.callbackURL, id: institutionData.institutionId),
+                   account: Account(cardSerialNumber: accountData.cardSerNo, isDebit: accountData.isDebit)
+               )
+               
+               AF.request("\(self.baseUrl)identity/api/v1/web/initialize",
+                          method: .post,
+                          parameters: requestObject,
+                          encoder: JSONParameterEncoder.default,
+                          headers: heads)
+                 .responseDecodable(of: InitializationResponseModel.self) { response in
+                   switch response.result {
+                   case .success(let value):
+                       completion(.success(value))
+                   case .failure(let error):
+                       completion(.failure(error))
+                   }
+                 }
+           } catch {
+               completion(.failure(error))
+           }
+       }
+    
+    
     
     public func changePin(initializationResponseObject: InitializationResponseModel,  previousUIViewController:UIViewController,completion:@escaping(String)->()) throws{
         
